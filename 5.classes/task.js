@@ -10,12 +10,6 @@ class PrintEditionItem {
   
     fix() {
       this.state = this.state * 1.5;
-      if (this.state < 0) {
-        this.state = 0
-      }
-      if (this.state > 100) {
-        this.state = 100
-      }
     }
   
     set state(state) {
@@ -24,8 +18,8 @@ class PrintEditionItem {
       }
       if (state > 100) {
         this._state = 100;
-      }
-      this._state = state;
+      } else {
+      this._state = state; }
     }
   
     get state() {
@@ -58,7 +52,7 @@ class PrintEditionItem {
   
   class FantasticBook extends Book {
     constructor(author, name, releaseDate, pagesCount) {
-      super(name, releaseDate, pagesCount, author);
+      super(author, name, releaseDate, pagesCount);
       this.type = "fantastic";
       this.author = author;
     }
@@ -66,7 +60,7 @@ class PrintEditionItem {
   
   class DetectiveBook extends Book {
     constructor(author, name, releaseDate, pagesCount) {
-      super(name, releaseDate, pagesCount, author);
+      super(author, name, releaseDate, pagesCount);
       this.type = "detective";
       this.author = author;
     }
